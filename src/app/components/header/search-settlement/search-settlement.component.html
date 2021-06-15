@@ -1,0 +1,28 @@
+<form action="post" class="search" *ngIf="api.vocabulary !== undefined">
+  <input type="text" class="search__input"
+    placeholder="{{api.vocabulary.userInterface.header.searchSettlement.placeholder}}" (input)="InputSearch($event)"
+    #searchSettlementInput>
+
+  <div class="search-result" [class.active]="api.searchSettlementStatus !== 'empty'">
+    <div class="search-result__error" [class.active]="api.searchSettlementStatus == 'error'">
+      <span>{{api.vocabulary.userInterface.header.searchSettlement.error}}</span>
+    </div>
+
+    <div class="search-result__error"
+      [class.active]="api.searchSettlementStatus == 'result' && listOfFoundSettlement.length === 0">
+      <span>{{api.vocabulary.userInterface.header.searchSettlement.nothing}}</span>
+    </div>
+
+    <div class="search-result__loading" [class.active]="api.searchSettlementStatus == 'loading'">
+      <div class="loading-icon"></div>
+    </div>
+
+    <ul class="search-result-list" [class.active]="api.searchSettlementStatus == 'result'">
+      <li class="search-result-list__item" *ngFor="let settlement of listOfFoundSettlement; let i = index">
+        <button class="search-result-list__button" *ngIf="PrepareButton(searchSettlementInput.value, i)"
+          [innerHTML]="buttonText" (click)="GetWeather(settlement, searchSettlementInput)" type="button">
+        </button>
+      </li>
+    </ul>
+  </div>
+</form>

@@ -1,1 +1,115 @@
-/* You can add global styles to this file, and also import other style files */
+// змінні проекту
+html {
+  --color-text-1: rgb(39, 39, 39);
+  --color-text-2: rgb(255, 255, 255);
+
+  --background-color-1: rgb(255, 255, 255);
+  --background-color-2: rgb(39, 39, 39);
+
+  --color-1: rgb(34, 34, 34);
+  --color-2: rgb(75, 180, 75);
+  --color-3: rgb(255, 255, 255);
+  --color-4: rgb(180, 75, 75);
+  --color-5: rgb(219, 216, 31);
+  --color-6: rgb(82, 82, 82);
+  --color-7: rgb(75, 75, 180);
+
+  --font-family-1: "Roboto", sans-serif;
+  --font-family-2: Arial, sans-serif;
+
+  --padding-1: 20px;
+  --padding-2: 10px;
+
+  --box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+
+  @media (prefers-color-scheme: dark) {
+    --color-text-1: rgb(255, 255, 255);
+    --color-text-2: rgb(39, 39, 39);
+
+    --background-color-2: rgb(255, 255, 255);
+    --background-color-1: rgb(82, 82, 82);
+  }
+
+  font-size: 12px;
+  font-weight: 300;
+  font-family: var(--font-family-1);
+
+  @media screen and (max-width: 900px) {
+    --padding-1: 10px;
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font: inherit;
+}
+
+body {
+  background-color: var(--background-color-1);
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 var(--padding-1);
+  margin: 0 auto;
+
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.loading-icon,
+.error-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+
+.loading-icon:after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid var(--color-2);
+  border-color: var(--color-2) transparent var(--color-2) transparent;
+  animation: loading-icon 1.2s linear infinite;
+}
+
+.error-icon:after {
+  content: "!";
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 50px;
+  height: 50px;
+
+  background-color: var(--color-4);
+  color: var(--color-3);
+
+  border-radius: 100%;
+  font-size: 30px;
+}
+
+@keyframes loading-icon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.includes {
+  background-color: var(--color-2);
+}

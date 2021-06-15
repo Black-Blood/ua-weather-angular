@@ -1,0 +1,48 @@
+<footer class="page-footer" *ngIf="api.vocabulary != undefined">
+  <div class="container">
+    <section class="page-footer-section">
+      <h3 class="page-footer-section__title">{{api.vocabulary.userInterface.footer.aboutProject.title}}</h3>
+      <p class="page-footer-section__text">{{api.vocabulary.userInterface.footer.aboutProject.text}}</p>
+      <p class="page-footer-section__text">{{api.vocabulary.userInterface.footer.aboutProject.developer}}</p>
+    </section>
+
+    <section class="page-footer-section">
+      <h3 class="page-footer-section__title">{{api.vocabulary.userInterface.footer.contactMe.title}}</h3>
+      <p class="page-footer-section__text">{{api.vocabulary.userInterface.footer.contactMe.phone}}: <a
+          href="tel:+380960451153" class="contacts">+380960451153</a></p>
+      <p class="page-footer-section__text">{{api.vocabulary.userInterface.footer.contactMe.email}}: <a
+          href="mailto:savrakbohdan@gmail.com" class="contacts">savrakbohdan@gmail.com</a></p>
+    </section>
+
+    <section class="page-footer-section">
+      <h3 class="page-footer-section__title">{{api.vocabulary.userInterface.footer.networks.title}}</h3>
+      <ul class="page-footer-section__list">
+        <li>
+          <a href="https://t.me/BohdanSavrak">
+            <img class="networks-icon" src="../../../assets/networks/telegram.svg" alt="Telegram" width="45"
+              height="45">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/bohdansavrak/">
+            <img class="networks-icon" src="../../../assets/networks/instagram.svg" alt="Instagram" width="45"
+              height="45">
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/Black-Blood">
+            <img class="networks-icon" src="../../../assets/networks/github.svg" alt="Github" width="45" height="45">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/profile.php?id=100012856002051">
+            <img class="networks-icon" src="../../../assets/networks/facebook.svg" alt="Facebook" width="45"
+              height="45">
+          </a>
+        </li>
+      </ul>
+    </section>
+
+
+  </div>
+</footer>

@@ -1,0 +1,143 @@
+.select-language {
+  width: 150px;
+  height: 50px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+
+  &__selected {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 100%;
+    height: 100%;
+    padding-right: 25px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: var(--background-color-1);
+    color: var(--color-text-1);
+
+    transition: 0.2s;
+
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 50%;
+      right: 16px;
+
+      display: block;
+      width: 10px;
+      height: 2px;
+
+      transition: all 0.3s ease-out;
+
+      background-color: var(--color-text-1);
+
+      transform: translate(-3px, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(3px, -50%) rotate(-45deg);
+    }
+
+    &:hover,
+    &.active {
+      background-color: var(--color-2);
+
+      &::before {
+        transform: translate(-3px, -50%) rotate(-45deg);
+      }
+
+      &::after {
+        transform: translate(3px, -50%) rotate(45deg);
+      }
+    }
+  }
+
+  &__img {
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  &__avalaible {
+    position: absolute;
+    top: 70px;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    background-color: var(--background-color-1);
+    overflow: hidden;
+    border-top: none;
+    border-radius: 5px;
+
+    transition: all 0.3s ease-out;
+    margin-top: 100px;
+    opacity: 0;
+    z-index: 8;
+    transition: 0.1s;
+    pointer-events: none;
+
+    &.active {
+      margin-top: 0;
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    height: 50px;
+    padding-right: 25px;
+
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--color-3);
+
+    border: none;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.1s;
+    position: relative;
+    background-color: var(--color-1);
+
+    &::after {
+      content: "";
+      width: 14px;
+      height: 14px;
+
+      position: absolute;
+      top: calc(50% - 7px);
+      right: 12px;
+
+      border-radius: 100%;
+      background-color: var(--color-3);
+    }
+
+    &:hover::after {
+      background-color: var(--color-2);
+    }
+
+    &.active::after {
+      background-color: var(--color-2);
+    }
+  }
+}

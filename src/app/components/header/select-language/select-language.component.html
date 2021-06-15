@@ -1,0 +1,17 @@
+<div class="select-language" *ngIf="api.vocabulary !== undefined">
+  <button class="select-language__selected" data-default="ua" (click)="OpenSelectLanguageList($event, languageList)"
+    #openSelectListButton>
+    <img class="select-language__img" src="../../../assets/flags/{{api.vocabulary.language.abbr}}.svg"
+      alt="{{api.vocabulary.language.full}}" height="30" width="30px">
+    <span class="select-language__text">{{api.vocabulary.language.abbr}}</span>
+  </button>
+  <ul class="select-language__avalaible" #languageList>
+    <li *ngFor="let language of api.avalaibleLanguagesAbbr">
+      <button class="select-language__button" [class.active]="language === api.vocabulary.language.abbr"
+        (click)="SelectLanguage($event, language, openSelectListButton, languageList)" type="button">
+        <img class="select-language__img" src="../../../assets/flags/{{language}}.svg" alt="" height="30" width="30px">
+        <span class="select-language__text">{{language}}</span>
+      </button>
+    </li>
+  </ul>
+</div>

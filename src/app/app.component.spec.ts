@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ua-weather-angular'`, () => {
+  it(`should have as title 'ua-wather-angular'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ua-weather-angular');
+    expect(app.title).toEqual('ua-wather-angular');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('ua-weather-angular app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('ua-wather-angular app is running!');
   });
 });

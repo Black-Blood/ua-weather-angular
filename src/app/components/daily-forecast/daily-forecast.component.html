@@ -1,0 +1,230 @@
+<section class="daily-forecast"
+  *ngIf="api.vocabulary !== undefined && api.weather !== undefined && api.settlement !== undefined">
+  <nav class="daily-forecast-week">
+    <button class="daily-forecast-week__button" [class.active]="api.activeDay === day"
+      (click)="WeekButtonClick($event, day)" *ngFor="let day of days">
+
+      <p class="daily-forecast-week__weekday">
+        {{api.vocabulary.userInterface.dailyForecast.days[CreateWeekDay(day).getDay()]}}
+        —
+        {{api.vocabulary.userInterface.dailyForecast.month[CreateWeekDay(day).getMonth()]}},
+        {{CreateWeekDay(day).getDate()}}
+      </p>
+
+      <img class="daily-forecast-week__img"
+        src="../../../assets/weather/{{api.weather.daily[day].description.icon}}.svg"
+        alt="{{api.weather.daily[day].description.allText}}" height="40">
+      <p class="daily-forecast-week__min">{{api.weather.daily[day].temperature.min}}</p>
+      <p class="daily-forecast-week__max">{{api.weather.daily[day].temperature.max}}</p>
+    </button>
+  </nav>
+  <article class="daily-forecast-details weather-details">
+    <h2 class="weather-details__settlement">
+      {{
+      api.settlement.names[api.languageAbbr]
+      }}{{
+      api.settlement.areaNames !== undefined ? ", " + api.settlement.areaNames[api.languageAbbr] : ""
+      }}{{
+      api.settlement.regionNames !== undefined ? ", " + api.settlement.regionNames[api.languageAbbr] : ""
+      }}
+    </h2>
+    <div class="weather-details-description description">
+      <img class="description__icon"
+        src="../../../assets/weather/{{api.weather.daily[api.activeDay].description.icon}}.svg"
+        alt="{{api.weather.daily[api.activeDay].description.allText}}">
+      <p class="description__temperature_min">
+        {{api.weather.daily[api.activeDay].temperature.min > 0 ? "+" : ""}}
+        {{api.weather.daily[api.activeDay].temperature.min}}
+      </p>
+      <p class="description__temperature_max">
+        {{api.weather.daily[api.activeDay].temperature.max > 0 ? "+" : ""}}
+        {{api.weather.daily[api.activeDay].temperature.max}}
+      </p>
+      <p class="description__short-text">{{api.weather.daily[api.activeDay].description.allText}}</p>
+    </div>
+    <section class="weather-details-params">
+      <article class="params-category params-category_date">
+        <h3 class="params-category__title">
+          {{api.vocabulary.userInterface.dailyForecast.categories.date.title}}:
+          {{api.weather.daily[api.activeDay].day}}
+        </h3>
+      </article>
+      <article class="params-category">
+        <h3 class="params-category__title">
+          {{api.vocabulary.userInterface.dailyForecast.categories.temperature.title}}:
+        </h3>
+        <ul class="params-category__subcategories">
+          <li class="params-category__text">
+            <span>{{api.vocabulary.userInterface.dailyForecast.categories.temperature.min}}:</span>
+            <span>
+              {{
+              api.weather.daily[api.activeDay].temperature.min > 0 ? "+" : ""
+              }}{{
+              api.weather.daily[api.activeDay].temperature.min
+              }}
+              {{api.vocabulary.userInterface.dailyForecast.si.temperature}}
+            </span>
+          </li>
+          <li class="params-category__text">
+            <span>{{api.vocabulary.userInterface.dailyForecast.categories.temperature.max}}:</span>
+            <span>
+              {{
+              api.weather.daily[api.activeDay].temperature.max > 0 ? "+" : ""
+              }}{{
+              api.weather.daily[api.activeDay].temperature.max
+              }}
+              {{api.vocabulary.userInterface.dailyForecast.si.temperature}}
+            </span>
+          </li>
+          <li class="params-category__text">
+            <span>{{api.vocabulary.userInterface.dailyForecast.categories.temperature.morning}}:</span>
+            <span>
+              {{
+              api.weather.daily[api.activeDay].temperature.real.morning > 0 ? "+" : ""
+              }}{{
+              api.weather.daily[api.activeDay].temperature.real.morning
+              }}
+              {{api.vocabulary.userInterface.dailyForecast.si.temperature}}
+            </span>
+          </li>
+          <li class="params-category__text">
+            <span>{{api.vocabulary.userInterface.dailyForecast.categories.temperature.afternoon}}:</span>
+            <span>
+              {{
+              api.weather.daily[api.activeDay].temperature.real.afternoon > 0 ? "+" : ""
+              }}{{
+              api.weather.daily[api.activeDay].temperature.real.afternoon
+              }}
+              {{api.vocabulary.userInterface.dailyForecast.si.temperature}}
+            </span>
+          </li>
+          <li class="params-category__text">
+            <span>{{api.vocabulary.userInterface.dailyForecast.categories.temperature.evening}}:</span>
+            <span>
+              {{
+              api.weather.daily[api.activeDay].temperature.real.evening > 0 ? "+" : ""
+              }}{{
+              api.weather.daily[api.activeDay].temperature.real.evening
+              }}
+              {{api.vocabulary.userInterface.dailyForecast.si.temperature}}
+            </span>
+          </li>
+          <li class="params-category__text">
+            <span>{{api.vocabulary.userInterface.dailyForecast.categories.temperature.night}}:</span>
+            <span>
+              {{
+              api.weather.daily[api.activeDay].temperature.real.night > 0 ? "+" : ""
+              }}{{
+              api.weather.daily[api.activeDay].temperature.real.night
+              }}
+              {{api.vocabulary.userInterface.dailyForecast.si.temperature}}
+            </span>
+          </li>
+        </ul>
+      </article>
+      <article class="params-category">
+        <h3 class="params-category__title">{{api.vocabulary.userInterface.dailyForecast.categories.general.title}}:
+        </h3>
+        <ul class="params-category__subcategories">
+          <li class="params-category__text">
+            <span>{{api.vocabulary.userInterface.dailyForecast.categories.general.pressure}}:</span>
+            <span>
+              {{api.weather.daily[api.activeDay].general.pressure}}
+              {{api.vocabulary.userInterface.dailyForecast.si.pressure}}
+            </span>
+          </li>
+          <li class="params-category__text">
+            <span>{{api.vocabulary.userInterface.dailyForecast.categories.general.humidity}}:</span>
+            <span>
+              {{api.weather.daily[api.activeDay].general.humidity}}
+              {{api.vocabulary.userInterface.dailyForecast.si.probability}}
+            </span>
+          </li>
+          <li class="params-category__text">
+            <span>{{api.vocabulary.userInterface.dailyForecast.categories.general.clouds}}:</span>
+            <span>
+              {{api.weather.daily[api.activeDay].general.clouds}}
+              {{api.vocabulary.userInterface.dailyForecast.si.probability}}
+            </span>
+          </li>
+          <li class="params-category__text">
+            <span>{{api.vocabulary.userInterface.dailyForecast.categories.general.dewPoint}}:</span>
+            <span>
+              {{
+              api.weather.daily[api.activeDay].general.dewPoint > 0 ? "+" : ""
+              }}{{
+              api.weather.daily[api.activeDay].general.dewPoint
+              }}
+              {{api.vocabulary.userInterface.dailyForecast.si.temperature}}
+            </span>
+          </li>
+        </ul>
+      </article>
+      <article class="params-category">
+        <h3 class="params-category__title">{{api.vocabulary.userInterface.dailyForecast.categories.sun.title}}:</h3>
+        <ul class="params-category__subcategories">
+          <li class="params-category__text">
+            <span>{{api.vocabulary.userInterface.dailyForecast.categories.sun.sunrise}}:</span>
+            <span>{{api.weather.daily[api.activeDay].sun.sunrise}}</span>
+          </li>
+          <li class="params-category__text">
+            <span>{{api.vocabulary.userInterface.dailyForecast.categories.sun.sunset}}:</span>
+            <span>{{api.weather.daily[api.activeDay].sun.sunset}}</span>
+          </li>
+        </ul>
+      </article>
+      <article class="params-category">
+        <h3 class="params-category__title">{{api.vocabulary.userInterface.dailyForecast.categories.wind.title}}:</h3>
+        <ul class="params-category__subcategories">
+          <li class="params-category__text">
+            <span>{{api.vocabulary.userInterface.dailyForecast.categories.wind.speed}}:</span>
+            <span>
+              {{api.weather.daily[api.activeDay].wind.speed}}
+              {{api.vocabulary.userInterface.dailyForecast.si.speed}}
+            </span>
+          </li>
+          <li class="params-category__text">
+            <span>{{api.vocabulary.userInterface.dailyForecast.categories.wind.gust}}:</span>
+            <span>
+              {{api.weather.daily[api.activeDay].wind.gust}}
+              {{api.vocabulary.userInterface.dailyForecast.si.speed}}
+            </span>
+          </li>
+          <li class="params-category__text">
+            <span>{{api.vocabulary.userInterface.dailyForecast.categories.wind.direction}}:</span>
+            <span>
+              {{api.vocabulary.userInterface.dailyForecast.si.direction[api.weather.daily[api.activeDay].wind.direction]}}
+            </span>
+          </li>
+        </ul>
+      </article>
+      <article class="params-category">
+        <h3 class="params-category__title">
+          {{api.vocabulary.userInterface.dailyForecast.categories.precipitation.title}}:</h3>
+        <ul class="params-category__subcategories">
+          <li class="params-category__text">
+            <span>{{api.vocabulary.userInterface.dailyForecast.categories.precipitation.probability}}:</span>
+            <span>
+              {{api.weather.daily[api.activeDay].precipitation.probability}}
+              {{api.vocabulary.userInterface.dailyForecast.si.probability}}
+            </span>
+          </li>
+          <li class="params-category__text">
+            <span>{{api.vocabulary.userInterface.dailyForecast.categories.precipitation.rain}}:</span>
+            <span>
+              {{api.weather.daily[api.activeDay].precipitation.rain}}
+              {{api.vocabulary.userInterface.dailyForecast.si.distance}}
+            </span>
+          </li>
+          <li class="params-category__text">
+            <span>{{api.vocabulary.userInterface.dailyForecast.categories.precipitation.snow}}:</span>
+            <span>
+              {{api.weather.daily[api.activeDay].precipitation.snow}}
+              {{api.vocabulary.userInterface.dailyForecast.si.distance}}
+            </span>
+          </li>
+        </ul>
+      </article>
+    </section>
+  </article>
+</section>

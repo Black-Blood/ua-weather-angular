@@ -1,0 +1,232 @@
+[
+  {
+    "language": {
+      "abbr": "ua",
+      "full": "Українська"
+    },
+    "userInterface": {
+      "header": {
+        "searchSettlement": {
+          "placeholder": "Морозівка, Баришівський район, Київська область",
+          "error": "На жаль, не вдалося виконати пошук. Будь-ласка, перевірте підключення до мережі",
+          "nothing": "На жаль, нічого не знайдено"
+        }
+      },
+      "main": {
+        "loading": "Отримуємо прогноз погоди",
+        "error": "Не вдалося отримути прогноз погоди"
+      },
+      "dailyForecast": {
+        "month": [
+          "Січень",
+          "Лютий",
+          "Березень",
+          "Квітень",
+          "Травень",
+          "Червень",
+          "Липень",
+          "Серпень",
+          "Вересень",
+          "Жовтень",
+          "Листопад",
+          "Грудень"
+        ],
+        "days": [
+          "НД",
+          "ПН",
+          "ВТ",
+          "СР",
+          "ЧТ",
+          "ПТ",
+          "СБ"
+        ],
+        "categories": {
+          "date": {
+            "title": "Дата"
+          },
+          "temperature": {
+            "title": "Температура",
+            "min": "Мінімальна",
+            "max": "Максимальна",
+            "current": "Зараз",
+            "afternoon": "Вдень",
+            "evening": "Ввечері",
+            "morning": "Вранці",
+            "night": "Вночі"
+          },
+          "general": {
+            "title": "Загальні",
+            "clouds": "Хмарність",
+            "humidity": "Вологість",
+            "pressure": "Тиск",
+            "dewPoint": "Точка роси"
+          },
+          "sun": {
+            "title": "Сонце",
+            "sunrise": "Схід",
+            "sunset": "Захід"
+          },
+          "wind": {
+            "title": "Вітер",
+            "direction": "Напрям",
+            "gust": "Пориви",
+            "speed": "Швидкість"
+          },
+          "precipitation": {
+            "title": "Опади",
+            "probability": "Вірогідність",
+            "rain": "Дощ",
+            "snow": "Сніг"
+          }
+        },
+        "si": {
+          "temperature": "°С",
+          "speed": "м/с",
+          "direction": [
+            "північний",
+            "північно-східний",
+            "східний",
+            "південно-східний",
+            "південний",
+            "південно-західний",
+            "західний",
+            "північно-західний"
+          ],
+          "probability": "%",
+          "pressure": " мм рт ст",
+          "distance": "мм"
+        }
+      },
+      "footer": {
+        "aboutProject": {
+          "title": "Про проект",
+          "text": "Сайт зроблений як демонстрація навичок роботи з фреймворком Angular",
+          "developer": "Розробник: Саврак Богдан Михайлович"
+        },
+        "contactMe": {
+          "title": "Зв'язатися зі мною",
+          "phone": "Тел.",
+          "email": "Ел. Пошта"
+        },
+        "networks": {
+          "title": "Я в мережі"
+        }
+      }
+    }
+  },
+  {
+    "language": {
+      "abbr": "en",
+      "full": "English"
+    },
+    "userInterface": {
+      "header": {
+        "searchSettlement": {
+          "placeholder": "Morozivka, Baryshivskyi district, Kyivska oblast ",
+          "error": "Sorry, search failed. Please, check your internet connection",
+          "nothing": "Sorry, nothing was found"
+        }
+      },
+      "main": {
+        "loading": "Looking for a forecast",
+        "error": "Sorry, looking for a forecast was failed"
+      },
+      "dailyForecast": {
+        "month": [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December"
+        ],
+        "days": [
+          "Sun",
+          "Mon",
+          "Tue",
+          "Wed",
+          "Thu",
+          "Fri",
+          "Sat"
+        ],
+        "categories": {
+          "date": {
+            "title": "Date"
+          },
+          "temperature": {
+            "title": "Temperature",
+            "min": "Minimum",
+            "max": "Maximum",
+            "current": "Current",
+            "afternoon": "Afternoon",
+            "evening": "Evening",
+            "morning": "Morning",
+            "night": "Night"
+          },
+          "general": {
+            "title": "General",
+            "clouds": "Cloudiness",
+            "humidity": "Humidity",
+            "pressure": "Pressure",
+            "dewPoint": "Dewpoint"
+          },
+          "sun": {
+            "title": "Sun",
+            "sunrise": "Sunrise",
+            "sunset": "Sunset"
+          },
+          "wind": {
+            "title": "Wind",
+            "direction": "Direction",
+            "gust": "Gust",
+            "speed": "Speed"
+          },
+          "precipitation": {
+            "title": "Precipitation",
+            "probability": "Probability",
+            "rain": "Rain",
+            "snow": "Snow"
+          }
+        },
+        "si": {
+          "temperature": "°C",
+          "speed": "m/s",
+          "direction": [
+            "northern",
+            "northeastern",
+            "east",
+            "southeastern",
+            "southern",
+            "southwestern",
+            "west",
+            "northwestern"
+          ],
+          "probability": "%",
+          "pressure": "mm Hg",
+          "distance": "mm"
+        }
+      },
+      "footer": {
+        "aboutProject": {
+          "title": "About project",
+          "text": "The site is created for demonstration of skills in working with the Angula frameworkr",
+          "developer": "Developer: Bohdan Savrak"
+        },
+        "contactMe": {
+          "title": "Contact me",
+          "phone": "Tel.",
+          "email": "Email"
+        },
+        "networks": {
+          "title": "I'm online"
+        }
+      }
+    }
+  }
+]

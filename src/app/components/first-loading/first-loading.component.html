@@ -1,0 +1,32 @@
+<div class="preloading">
+  <div class="preloading-loading" *ngIf="api.vocabularyStatus == 'loading'">
+    <div class="loading-icon"></div>
+    <p class="preloading-loading__text">Завантажуємо мовний пакет</p>
+    <p class="preloading-loading__text">Loading language package</p>
+  </div>
+  <div class="preloading-error" *ngIf="api.vocabularyStatus == 'error'">
+    <div class="error-icon"></div>
+    <p class="preloading-error__text">На жаль, не вдалося завантажити мовний пакет! Будь-ласка, перевірте підключення до
+      мережі</p>
+    <p class="preloading-error__text">Sorry, language package wasn't delivered! Please, check your internet-connection
+    </p>
+  </div>
+</div>
+
+<app-header *ngIf="api.vocabulary != undefined"></app-header>
+<main class="page-main" *ngIf="api.vocabulary != undefined">
+  <div class="page-main-loading" *ngIf="api.weatherStatus == 'loading'">
+    <div class="loading-icon"></div>
+    <p class="page-main-loading__text">{{api.vocabulary.userInterface.main.loading}}</p>
+  </div>
+
+  <div class="page-main-error" *ngIf="api.weatherStatus == 'error'">
+    <div class="error-icon"></div>
+    <p class="page-main-error__text">{{api.vocabulary.userInterface.main.error}}</p>
+  </div>
+
+  <div class="container" *ngIf="api.weatherStatus =='result'">
+    <app-daily-forecast class="daily-forecast"></app-daily-forecast>
+  </div>
+</main>
+<app-footer *ngIf="api.vocabulary != undefined"></app-footer>

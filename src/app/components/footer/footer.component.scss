@@ -1,0 +1,64 @@
+.page-footer {
+  height: 150px;
+  background-color: var(--color-1);
+  color: var(--color-3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+
+  .container {
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr;
+    gap: var(--padding-1);
+    padding-top: var(--padding-1);
+  }
+
+  &-section {
+    &__title {
+      height: 35px;
+      font-size: 1.8rem;
+      margin-bottom: var(--padding-1);
+
+      display: inline-flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      padding: 0 var(--padding-2);
+      border-radius: 5px;
+
+      background-color: var(--color-6);
+    }
+
+    &__text {
+      font-size: 1.2rem;
+      font-style: italic;
+      line-height: 1.5rem;
+      margin-bottom: 5px;
+
+      & a {
+        text-decoration: dashed;
+        color: inherit;
+      }
+    }
+
+    &__list {
+      list-style: none;
+      display: flex;
+      gap: var(--padding-1);
+    }
+  }
+}
+
+.contacts {
+  border-bottom: 1px dotted var(--color-3);
+  color: var(--color-3);
+  transition: 0.2s;
+
+  &:hover {
+    color: var(--color-2) !important;
+    border-bottom: 1px dotted var(--color-2);
+  }
+}
+
+.networks-icon {
+  border-radius: 5px;
+  overflow: hidden;
+}
