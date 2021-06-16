@@ -15,7 +15,7 @@ export class SelectLanguageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  async OpenSelectLanguageList($event: MouseEvent, selectList: HTMLElement) {
+  OpenSelectLanguageList($event: MouseEvent, selectList: HTMLElement) {
     $event.preventDefault()
 
     let button: HTMLButtonElement = <HTMLButtonElement>$event.currentTarget
@@ -25,14 +25,14 @@ export class SelectLanguageComponent implements OnInit {
   }
 
 
-  async SelectLanguage($event: MouseEvent, language: string, button: HTMLButtonElement, selectList: HTMLElement) {
+  SelectLanguage($event: MouseEvent, language: string, button: HTMLButtonElement, selectList: HTMLElement) {
     $event.preventDefault()
     if (this.api.vocabulary?.language.abbr != language) {
       button.classList.toggle("active")
       selectList.classList.toggle("active")
 
-      await this.api.GetVocabulary(language)
-      await this.api.GetWeather(language)
+      this.api.GetVocabulary(language)
+      this.api.GetWeather(language)
     }
   }
 

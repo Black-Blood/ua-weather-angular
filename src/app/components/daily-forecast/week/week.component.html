@@ -1,0 +1,17 @@
+<nav class="daily-forecast-week" *ngIf="api.vocabulary != undefined && api.weather != undefined">
+  <button class="daily-forecast-week__button" [class.active]="api.activeDay === day"
+    (click)="WeekButtonClick($event, day)" *ngFor="let day of days">
+
+    <p class="daily-forecast-week__weekday">
+      {{api.vocabulary.userInterface.dailyForecast.days[CreateWeekDay(day).getDay()]}}
+      —
+      {{api.vocabulary.userInterface.dailyForecast.month[CreateWeekDay(day).getMonth()]}},
+      {{CreateWeekDay(day).getDate()}}
+    </p>
+
+    <img class="daily-forecast-week__img" src="../../../assets/weather/{{api.weather.daily[day].description.icon}}.svg"
+      alt="{{api.weather.daily[day].description.allText}}" height="40">
+    <p class="daily-forecast-week__min">{{api.weather.daily[day].temperature.min}}</p>
+    <p class="daily-forecast-week__max">{{api.weather.daily[day].temperature.max}}</p>
+  </button>
+</nav>

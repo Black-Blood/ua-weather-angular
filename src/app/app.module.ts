@@ -11,6 +11,7 @@ import { DailyForecastComponent } from './components/daily-forecast/daily-foreca
 import { SearchSettlementComponent } from './components/header/search-settlement/search-settlement.component';
 import { SelectLanguageComponent } from './components/header/select-language/select-language.component';
 import { FirstLoadingComponent } from './components/first-loading/first-loading.component';
+import { WeekComponent } from './components/daily-forecast/week/week.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FirstLoadingComponent } from './components/first-loading/first-loading.
     DailyForecastComponent,
     SearchSettlementComponent,
     SelectLanguageComponent,
-    FirstLoadingComponent
+    FirstLoadingComponent,
+    WeekComponent
   ],
   imports: [
     BrowserModule,
