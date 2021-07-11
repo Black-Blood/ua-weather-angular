@@ -1,27 +1,9 @@
-# UaWeatherAngular
+# <img src="https://ua-weather-angular.herokuapp.com/assets/thermometer.svg" alt="drawing" width="25"/>[UA Weather | Погода в Україні](https://ua-weather-angular.herokuapp.com/)
+This [site](https://ua-weather-angular.herokuapp.com/) is created for demonstration of skills in working with the **Angular framework** and **Node.js**. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+The weather data is from [OpenWeatherMap](https://openweathermap.org/api)
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## ua-weather-angular
+This is a front side of the site, which is responsible for:
+- rendering weather data, which is delivered from server side
+- multilanguage view of the site
